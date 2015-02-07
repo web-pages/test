@@ -50,7 +50,7 @@
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: 'container' }" +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: '80% container' }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -117,7 +117,7 @@
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: 'container' }" +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: '80% container' }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -205,7 +205,7 @@
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: 'container' }" +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: '80% container' }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -251,7 +251,7 @@
 &lt;p&gt;A block cipher is an encryption mechanism that takes a fixed input of size n bytes, and produces an encrypted output also of size n bytes. There are many block ciphers, and the field has been studied intensely (&lt;a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard"&gt;AES&lt;/a&gt; is an example). Block ciphers exhibit many of the properties of a crytographic hash, therefore it woulb be nice if a block cipher could be used to construct a cryptographic hash. And it turns out that it can: Any &lt;em&gt;secure&lt;/em&gt; block cipher can be quickly altered (normally by a method called &lt;a href="http://en.wikipedia.org/wiki/Davies-Meyer#Davies.E2.80.93Meyer"&gt;Davies-Meyer&lt;/a&gt;) to have all the properties of a cryptographic hash function except &lt;em&gt;compression&lt;/em&gt;. Block ciphers need two inputs which are kept secret: A &lt;em&gt;key&lt;/em&gt; and a &lt;em&gt;message&lt;/em&gt;. Therefore a cryptographic hash function made from a block cipher also needs two inputs, but unlike a block cipher, neither input is kept secret (read up more on &lt;a href="http://en.wikipedia.org/wiki/Davies-Meyer#Davies.E2.80.93Meyer"&gt;Davies-Meyer&lt;/a&gt; to understand these inputs). So how does one get the compression property? It is done using a construction called &lt;em&gt;Merkle–Damgård&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;The Merkle–Damgård construction takes as input a message of arbitrary length and produces a cryptographic hash of fixed output. It does this by breaking the message up into blocks, then feeding the blocks iteratively into a smaller cryptographic hash function (such as the one discussed in the above paragraph). The output of each function is fed as one of the inputs into the next function. The very first function just has a non-random set initialisation vector (IV) set as one of the inputs.&lt;/p&gt;
 &lt;p&gt;The image below demonstrates the Merkle–Damgård construction. In this image, &lt;strong&gt;h&lt;/strong&gt; is the cryptographic hash created from the block cipher, and &lt;span class="math"&gt;\(H_n\)&lt;/span&gt; is the resulting outputs of each stage. Note how the output of one function is chained to one of the inputs of the other.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img src="http://doctrina.org/static/images/merkle-damgard.png" style="margin-left:4px; padding: 4px; background-color: #fff; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);"/&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src="http://doctrina.org/static/images/merkle-damgard.png" style="margin-left:4px; padding: 4px; background-color: #fff; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.2);"/&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;h2 id="merkledamgard-is-not-secure"&gt;Merkle–Damgård Is Not Secure&lt;a class="headerlink" href="#merkledamgard-is-not-secure" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;All our popular cryptographic hash functions are constructed using Merkle–Damgård, but it is very easy to mount an existential forgery attack on anything constructed using the Merkle–Damgård. This is because cryptographic hash functions created with Merkle–Damgård are not designed to be protected from existential forgery (more about this a little later). To see how an existential forgery can happen, study the Merkle–Damgård construction picture. An existential forgery can happen by doing the following:&lt;/p&gt;
 &lt;ol&gt;
@@ -297,7 +297,7 @@
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: 'container' }" +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: '80% container' }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -333,7 +333,7 @@ n^{log_b a}&amp;amp;= X = a^{log_b n} &amp;amp; \cr
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: 'container' }" +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: '80% container' }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -391,7 +391,7 @@ n^{log_b a}&amp;amp;= X = a^{log_b n} &amp;amp; \cr
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: 'container' }" +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: '80% container' }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -449,7 +449,7 @@ n^{log_b a}&amp;amp;= X = a^{log_b n} &amp;amp; \cr
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: 'container' }" +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: '80% container' }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -1561,7 +1561,7 @@ D(d,E(e,m)) = m
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: 'container' }" +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: '80% container' }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -1579,7 +1579,7 @@ D(d,E(e,m)) = m
 &lt;p&gt;Is called the &lt;em&gt;set of integers modulo p&lt;/em&gt; (or &lt;em&gt;mod p&lt;/em&gt; for short). It is a set that contains Integers from &lt;span class="math"&gt;\(0\)&lt;/span&gt; up until &lt;span class="math"&gt;\(p-1\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;: &lt;span class="math"&gt;\(\mathbb{Z}_{10} =\{0,1,2,3,4,5,6,7,8,9\}\)&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id="integer-remainder-after-dividing"&gt;Integer Remainder After Dividing&lt;a class="headerlink" href="#integer-remainder-after-dividing" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;When we first learned about numbers at school, we had no notion of real numbers, only integers.  Therefore we were told that  5 divided by 2 was equal to 2 remainder 1, and not &lt;span class="math"&gt;\(2\frac{1}{2}\)&lt;/span&gt;. It turns out that this type of math is absolutely vital to RSA, and is one of the reasons that secures RSA. A very formal way of stating a remainder after dividing by another number is an equivalence relationship:&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;When we first learned about numbers at school, we had no notion of real numbers, only integers.  Therefore we were told that  5 divided by 2 was equal to 2 remainder 1, and not &lt;span class="math"&gt;\(2\frac{1}{2}\)&lt;/span&gt;. It turns out that this type of math is absolutely vital to RSA, and is one of the reasons that secures RSA. A very formal way of stating a remainder after dividing by another number is an equivalence relationship:&lt;/p&gt;
 &lt;div class="math"&gt;\begin{equation}
  \label{bg:mod} \forall x,y,z,k \in \mathbb{Z}, x \equiv y \bmod z \Longrightarrow x = k\cdot z + y
 \end{equation}&lt;/div&gt;
@@ -1596,10 +1596,11 @@ D(d,E(e,m)) = m
 &lt;p&gt;The greatest common divisor (gcd) between two numbers is the largest integer that will divide both numbers. For example, &lt;span class="math"&gt;\(gcd(4,10) = 2\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;The interesting thing is that if two numbers have a gcd of 1, then the smaller of the two numbers has a multiplicative inverse in the modulo of the larger number. It is expressed in the following equation:&lt;/p&gt;
 &lt;div class="math"&gt;\begin{equation}
-    \label{bg:gcd}x \in \mathbb{Z}_p, x^{-1} \in \mathbb{Z}_p \Longleftrightarrow \gcd(x,p) = 1
+    \label{bg:gcd}
+    x \in \mathbb{Z}_p, x^{-1} \in \mathbb{Z}_p \Longleftrightarrow \gcd(x,p) = 1
 \end{equation}&lt;/div&gt;
 &lt;p&gt;The above just says that an inverse only exists if the greatest common divisor is 1. An example should set things straight...&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;: Lets work in the set &lt;span class="math"&gt;\(\mathbb{Z}_9\)&lt;/span&gt;, then &lt;span class="math"&gt;\(4 \in \mathbb{Z}_9\)&lt;/span&gt; and &lt;span class="math"&gt;\(gcd(4,9)=1\)&lt;/span&gt;. Therefore &lt;span class="math"&gt;\(4\)&lt;/span&gt; has a multiplicative inverse (written &lt;span class="math"&gt;\(4^{-1}\)&lt;/span&gt;) in &lt;span class="math"&gt;\(\bmod 9\)&lt;/span&gt;, which is &lt;span class="math"&gt;\(7\)&lt;/span&gt;. And indeed, &lt;span class="math"&gt;\(4\cdot 7 = 28 = 1 \bmod 9\)&lt;/span&gt;. But not all numbers have inverses. For instance, &lt;span class="math"&gt;\(3 \in \mathbb{Z}_9\)&lt;/span&gt; but &lt;span class="math"&gt;\(3^{-1}\)&lt;/span&gt; does not exist! This is because &lt;span class="math"&gt;\(gcd(3,9) = 3 \neq 1\)&lt;/span&gt;.&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;: Lets work in the set &lt;span class="math"&gt;\(\mathbb{Z}_9\)&lt;/span&gt;, then &lt;span class="math"&gt;\(4 \in \mathbb{Z}_9\)&lt;/span&gt; and &lt;span class="math"&gt;\(gcd(4,9)=1\)&lt;/span&gt;. Therefore &lt;span class="math"&gt;\(4\)&lt;/span&gt; has a multiplicative inverse (written &lt;span class="math"&gt;\(4^{-1}\)&lt;/span&gt;) in &lt;span class="math"&gt;\(\bmod 9\)&lt;/span&gt;, which is &lt;span class="math"&gt;\(7\)&lt;/span&gt;. And indeed, &lt;span class="math"&gt;\(4\cdot 7 = 28 = 1 \bmod 9\)&lt;/span&gt;. But not all numbers have inverses. For instance, &lt;span class="math"&gt;\(3 \in \mathbb{Z}_9\)&lt;/span&gt; but &lt;span class="math"&gt;\(3^{-1}\)&lt;/span&gt; does not exist! This is because &lt;span class="math"&gt;\(gcd(3,9) = 3 \neq 1\)&lt;/span&gt;.&lt;/p&gt;
 &lt;h2 id="eulers-totient"&gt;Euler's Totient&lt;a class="headerlink" href="#eulers-totient" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Euler%27s_totient_function"&gt;Euler's Totient&lt;/a&gt; is the number of elements that have an inverse in a set of modulo integers. The totient is denoted using the Greek symbol phi &lt;span class="math"&gt;\(\phi\)&lt;/span&gt;.  From &lt;span class="math"&gt;\(\ref{bg:gcd}\)&lt;/span&gt; above, we can see that the totient is just a count 
 of number of elements that have their &lt;span class="math"&gt;\(\gcd\)&lt;/span&gt; with the modulus equal to 1. Now for any prime number &lt;span class="math"&gt;\(p\)&lt;/span&gt;, every number from &lt;span class="math"&gt;\(1\)&lt;/span&gt; up to &lt;span class="math"&gt;\(p-1\)&lt;/span&gt; has a &lt;span class="math"&gt;\(\gcd\)&lt;/span&gt; of 1 with &lt;span class="math"&gt;\(p\)&lt;/span&gt;. This brings us to an important equation regarding the totient and prime numbers:&lt;/p&gt;
@@ -1738,7 +1739,7 @@ using Rabin-Miller primality tests:&lt;/p&gt;
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: 'container' }" +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }, linebreaks: { automatic: true, width: '80% container' }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
